@@ -8,11 +8,17 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe;
+  selectedRecipe: Recipe[] =[
+    new Recipe('A test recipe', 'Another Test','one more'),
+    new Recipe('Somemore Tests', 'Wait another one','dear god')
+  ];
 
   constructor() { }
 
   ngOnInit() {
+  }
+  onRecipeSelected(receipe:Recipe){
+    this.recipeWasSelected.emit(recipe);
   }
 
 }
